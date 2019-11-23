@@ -63,3 +63,35 @@ use Concrete\Core\Package\PackageService;
 $app = \ApplicationFacade::getFacadeApplication();
 return $app->make(PackageService::class)->getClass('concrete5_doctrine_behavioral_extensions');
 ```
+
+# Attribute
+
+### ~~AbstractCategory::getByHandle()~~
+@deprecated
+```php
+/** @var \Concrete\Core\Attribute\Category\PageCategory  $category */
+$category = $categoryEntity->getController();
+$key = $category->getByHandle($handle);
+```
+
+Replacement
+```php
+/** @var \Concrete\Core\Attribute\Category\PageCategory  $category */
+$category = $categoryEntity->getController();
+$key = $category->getAttributeKeyByHandle($handle);
+```
+
+### ~~AbstractCategory::getByID()~~
+@deprecated
+```php
+/** @var \Concrete\Core\Attribute\Category\PageCategory  $category */
+$category = $categoryEntity->getController();
+$key = $category->getByID($id);
+```
+
+Replacement
+```php
+/** @var \Concrete\Core\Attribute\Category\PageCategory  $category */
+$category = $categoryEntity->getController();
+$key = $category->getAttributeKeyByID($id);
+```
