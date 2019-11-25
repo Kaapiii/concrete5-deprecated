@@ -12,12 +12,16 @@ All controllers extending from `\Concrete\Core\Controller\AbstractController` ar
 ```php
 // Context: controller
 $this->redirect('/dashboard/system/some');
+
+$this->redirect('/dashboard/system/some', 'save');
 ```
 Replacement
 ```php
 use Concrete\Core\Routing\Redirect;
 
 Redirect::to('/dashboard/system/some')->send();
+
+Redirect::to('/dashboard/system/some', 'save')->send();
 ```
 ---
 
